@@ -1,0 +1,54 @@
+package:
+  name: dummy-generic
+  version: "0.1.0"
+
+source:
+  git_url: https://github.com/chimmy-changa/dummy-generic.git
+  git_rev: "v0.1.0"
+
+build:
+  number: 0
+  skip: true # [not linux]
+  entry_points:
+    - say_hi  = dummy_generic.get:print_hello
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - pip
+    - python >=3.7
+
+  run:
+    - aiohttp >=3.7.4
+    - jupyter-server-proxy
+    - python >=3.7
+
+test:
+  imports:
+    - matlab-web-desktop-app
+    - matlab-web-desktop-app .util
+  commands:
+    - matlab-web-desktop-app  --help
+  requires:
+    # - aioresponses
+    - psutil
+    - pytest
+    - pytest-aiohttp
+    - pytest-cov
+    - pytest-dependency
+    - pytest-env
+    - pytest-mock
+    - requests
+
+about:
+  home: "https://github.com/chimmy-changa/dummy-core"
+  license: Generic
+  license_family: OTHER
+  license_file: LICENSE.md
+  summary: "Gets strings"
+  doc_url: "https://github.com/chimmy-changa/dummy-core"
+  dev_url: "https://github.com/chimmy-changa/dummy-core"
+
+  extra:
+  recipe-maintainers:
+    - chimmy-changa
