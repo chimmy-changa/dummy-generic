@@ -15,14 +15,14 @@ tests_require = [
 
 setup(
     name="dummy-generic",
-    version="0.1.0",
+    version="0.1.1",
     description="Testing installation of Package",
     python_requires="~=3.7",
     install_requires=["jupyter-server-proxy", "aiohttp>=3.7.4"],
     setup_requires=["pytest-runner"],
     tests_require=tests_require,
     extras_require={"dev": ["aiohttp-devtools"] + tests_require},
-    url="#",
+    url="https://github.com/chimmy-changa/dummy-generic",
     author="auth",
     author_email="author@email.com",
     license="MIT",
