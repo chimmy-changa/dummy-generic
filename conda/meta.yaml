@@ -1,10 +1,10 @@
 package:
   name: dummy-generic
-  version: "0.1.0"
+  version: "0.1.1"
 
 source:
   git_url: https://github.com/chimmy-changa/dummy-generic.git
-  git_rev: "v0.1.0"
+  git_rev: "v0.1.1"
 
 build:
   number: 0
@@ -25,10 +25,10 @@ requirements:
 
 test:
   imports:
-    - matlab-web-desktop-app
-    - matlab-web-desktop-app .util
+    - dummy_generic
+    - dummy_generic.get
   commands:
-    - matlab-web-desktop-app  --help
+    - say_hi
   requires:
     # - aioresponses
     - psutil
